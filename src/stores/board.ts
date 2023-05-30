@@ -49,7 +49,7 @@ export const useBoardStore = defineStore('board', () => {
 
   const checkTie = () => {
     if (count === 9) {
-      dialog.setDialog({ dialogType: 'alert', message: 'Tie!', onCloseDialog: () => { resetGame(); } });
+      dialog.setDialog({ dialogType: 'alert', message: '¡Empate!', onCloseDialog: () => { resetGame(); } });
       dialog.show();
     }
   }
