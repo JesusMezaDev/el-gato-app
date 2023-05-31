@@ -31,7 +31,8 @@ export const useBoardStore = defineStore('board', () => {
       [[0, 1], [1, 1], [2, 1]],
       [[0, 2], [1, 2], [2, 2]],
       [[0, 0], [1, 1], [2, 2]],
-    ];
+      [[0, 2], [1, 1], [2, 0]],
+    ]
 
     for (let row = 0; row < lines.length; row++) {
       const [a, b, c] = lines[row];
