@@ -6,14 +6,20 @@ import confetti from 'canvas-confetti';
 import { useDialogStore } from './dialogStore';
 
 export const useBoardStore = defineStore('board', () => {
+  type cellValue = 'X' | 'O' | null;
+  type gameBoard = [
+    [cellValue, cellValue, cellValue],
+    [cellValue, cellValue, cellValue],
+    [cellValue, cellValue, cellValue],
+  ];
   const dialog = useDialogStore();
   const TURNS = {
-    X: 'X',
-    O: 'O',
+    X: 'X' as cellValue,
+    O: 'O' as cellValue,
   }
 
-  const board = ref<(string | null)[][]>([[null, null, null], [null, null, null], [null, null, null]]);
-  const turn = ref(TURNS.X);
+  const board = ref<gameBoard>([[null, null, null], [null, null, null], [null, null, null]]);
+  const turn = ref<cellValue>(TURNS.X);
   let count = 0;
 
   const resetGame = () => {
